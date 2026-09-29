@@ -1,0 +1,147 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+/* Reset básico: tira margens e espaçamentos padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de cor (facilita mudar depois) */
+:root {
+  --carmesim: #8B0000;         /* fundo principal */
+  --carmesim-escuro: #5c0000;  /* fundo dos cards */
+  --dourado: #D4AF37;          /* texto e bordas */
+  --dourado-claro: #FFD966;    /* destaque dos cards */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--carmesim);
+  color: var(--dourado);
+  padding: 16px;
+  line-height: 1.5;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+  color: var(--dourado-claro);
+  letter-spacing: 2px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: var(--dourado);
+  opacity: 0.9;
+}
+
+/* ===== CARDS DE RESUMO ===== */
+.cards {
+  display: grid;
+  /* No celular: 1 coluna. Em telas maiores: várias colunas */
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background-color: var(--carmesim-escuro);
+  border: 2px solid var(--dourado);
+  border-radius: 20px;               /* bem arredondado */
+  padding: 16px;
+  text-align: center;
+  /* Sombra dourada suave */
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: var(--dourado);
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--dourado-claro);
+}
+
+/* ===== TABELA ===== */
+.tabela-area {
+  /* Permite rolar de lado no celular se a tabela for grande */
+  overflow-x: auto;
+}
+
+.boletim {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;   /* espaço entre as “caixinhas” */
+  min-width: 640px;        /* garante leitura no celular rolando */
+}
+
+.boletim th {
+  padding: 10px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--dourado-claro);
+  border-bottom: 2px solid var(--dourado);
+}
+
+/* Cada linha vira uma “caixinha” com borda dourada */
+.boletim td {
+  padding: 10px;
+  background-color: var(--carmesim-escuro);
+  border-top: 2px solid var(--dourado);
+  border-bottom: 2px solid var(--dourado);
+  color: var(--dourado);
+  font-size: 0.9rem;
+}
+
+/* Bordas laterais para fechar a caixinha */
+.boletim td:first-child {
+  border-left: 2px solid var(--dourado);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.boletim td:last-child {
+  border-right: 2px solid var(--dourado);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Destaque para a situação */
+.situacao-bom {
+  color: #7CFC00; /* verde claro */
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #FFB347; /* laranja claro */
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: var(--dourado);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVIDADE (TELAS MAIORES) ===== */
+@media (min-width: 700px) {
+  .cards {
+    /* Em telas maiores, os cards ficam lado a lado */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .cabecalho h1 {
+    font-size: 2.6rem;
+  }
+}
