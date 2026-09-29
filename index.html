@@ -1,1 +1,72 @@
-meu boletin
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletim Digital</title>
+  <!-- Vinculando nosso arquivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho principal da página -->
+  <header>
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">9º Ano — Estudante Exemplo</p>
+  </header>
+
+  <main class="container">
+    <!-- Área de cards de resumo -->
+    <section class="cards-grid">
+      <div class="card">
+        <h3>Média Geral</h3>
+        <p id="card-media">—</p>
+      </div>
+
+      <div class="card">
+        <h3>Total de Faltas</h3>
+        <p id="card-faltas">—</p>
+      </div>
+
+      <div class="card">
+        <h3>Bom Desempenho</h3>
+        <p id="card-bom-desempenho">—</p>
+      </div>
+
+      <div class="card">
+        <h3>Precisa de Atenção</h3>
+        <p id="card-atencao">—</p>
+      </div>
+
+      <div class="card">
+        <h3>Frequência Geral</h3>
+        <p id="card-frequencia">92%</p>
+        <span class="subtexto-card">Frequência adequada</span>
+      </div>
+    </section>
+
+    <!-- Tabela para exibição dos dados das disciplinas -->
+    <section class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <!-- O JavaScript vai preencher as linhas aqui dentro dinamicamente -->
+        <tbody id="tabela-boletim">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Vinculando nosso script JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
