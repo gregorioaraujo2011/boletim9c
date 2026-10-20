@@ -131,9 +131,9 @@ async function realizarLogin() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        turma: CONFIG_ALUNO.turma,
-        numero_chamada: CONFIG_ALUNO.numeroChamada,
-        pin: pinDigitado
+        turma: String(CONFIG_ALUNO.turma),
+        numero_chamada: Number(CONFIG_ALUNO.numeroChamada),
+        pin: String(pinDigitado)
       })
     });
 
@@ -161,7 +161,7 @@ async function realizarLogin() {
     pinSessao = pinDigitado;
     campoPinInput.value = "";
 
-    // Se existirem dados na API, substitui exatamente os dados locais
+    // Se existirem dados na API e dados não for null, substitui os dados locais
     if (resultado && resultado.dados && Array.isArray(resultado.dados.disciplinas)) {
       dadosBoletim = resultado.dados.disciplinas;
     }
@@ -413,9 +413,9 @@ async function salvarAlteracoes() {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        turma: CONFIG_ALUNO.turma,
-        numero_chamada: CONFIG_ALUNO.numeroChamada,
-        pin: pinSessao,
+        turma: String(CONFIG_ALUNO.turma),
+        numero_chamada: Number(CONFIG_ALUNO.numeroChamada),
+        pin: String(pinSessao),
         dados: {
           disciplinas: novasDisciplinas
         }
