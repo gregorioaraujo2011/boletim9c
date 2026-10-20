@@ -145,3 +145,102 @@ body {
     font-size: 2.6rem;
   }
 }
+
+/* ===== NOVOS ESTILOS ADICIONADOS (LOGIN E EDIÇÃO) ===== */
+
+.area-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.card-login {
+  background-color: var(--carmesim-escuro);
+  border: 2px solid var(--dourado);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.card-login h2 {
+  font-size: 1.4rem;
+  color: var(--dourado-claro);
+  margin-bottom: 12px;
+}
+
+.info-aluno {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.campo-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.campo-pin input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--dourado);
+  background-color: var(--carmesim);
+  color: var(--dourado-claro);
+  font-size: 1rem;
+  width: 140px;
+  text-align: center;
+}
+
+.campo-pin input:focus {
+  outline: 2px solid var(--dourado-claro);
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--dourado);
+  color: var(--carmesim-escuro);
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.barra-acoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mensagem-status {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.campo-invalid {
+  border: 2px solid #ff4d4d !important;
+  background-color: #400000 !important;
+}
+
+.input-edicao-nota,
+.input-edicao-falta {
+  width: 60px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--dourado);
+  background-color: var(--carmesim);
+  color: var(--dourado-claro);
+  text-align: center;
+  font-size: 0.9rem;
+}
